@@ -1,0 +1,12 @@
+node_modules
+
+# Ignore configuration and automatically generated cruft
+*.log
+
+# Operating system files
+.Spotlight-V100
+.Trashes
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Thumbs.db

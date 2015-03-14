@@ -1,0 +1,28 @@
+{
+  "name": "mocha-eslint",
+  "version": "0.0.1",
+  "description": "run ESLint as mocha tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mocha",
+    "eslint",
+    "mochaplugin"
+  ],
+  "author": "Ian VanSchooten",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": "~0.0",
+    "mocha": "~2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BadgeLabs/mocha-eslint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BadgeLabs/mocha-eslint/issues"
+  },
+  "homepage": "https://github.com/BadgeLabs/mocha-eslint"
+}
