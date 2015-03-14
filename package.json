@@ -13,9 +13,12 @@
   ],
   "author": "Ian VanSchooten",
   "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.0"
+  },
   "peerDependencies": {
-    "eslint": "~0.0",
-    "mocha": "~2.0"
+    "eslint": "^0.16.x",
+    "mocha": "^2.0"
   },
   "repository": {
     "type": "git",
