@@ -10,10 +10,16 @@ module.exports = function (paths, options) {
   describe('eslint', function () {
     paths.forEach(function (p) {
       it(`should have no errors in ${p}`, function () {
-        var report = cli.executeOnFiles([p]);
-        var formatter = cli.getFormatter(format);
-        // console.log(formatter(report.results));
-        if (report.errorCount !== 0) {
+        try {
+          var report = cli.executeOnFiles([p]);
+          var formatter = cli.getFormatter(format);
+        } catch (err) {
+          throw new Error(err);
+        }
+        if (
+          report &&
+          report.errorCount > 0
+        ) {
           throw new Error(
             `${chalk.red('Code did not pass lint rules')}
             ${formatter(report.results)}`
