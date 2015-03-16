@@ -10,6 +10,9 @@ You can install into your node.js project as a development dependency with:
 ```
 $ npm install --save-dev mocha-eslint
 ```
+Mocha-eslint will install ESLint for itself, so you don't need to worry about adding it to your consuming module.
+
+The same is not true for Mocha.  You should already have Mocha installed in your consuming module.
 
 ## Usage
 
