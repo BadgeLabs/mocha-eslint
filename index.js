@@ -9,7 +9,7 @@ module.exports = function (paths, options) {
   }
   describe('eslint', function () {
     paths.forEach(function (p) {
-      it(`should have no errors in ${p}`, function () {
+      it('should have no errors in ' + p, function () {
         try {
           var report = cli.executeOnFiles([p]);
           var formatter = cli.getFormatter(format);
