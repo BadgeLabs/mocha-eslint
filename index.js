@@ -21,8 +21,8 @@ module.exports = function (paths, options) {
           report.errorCount > 0
         ) {
           throw new Error(
-            `${chalk.red('Code did not pass lint rules')}
-            ${formatter(report.results)}`
+            chalk.red('Code did not pass lint rules') +
+            formatter(report.results)
           );
         }
       });
