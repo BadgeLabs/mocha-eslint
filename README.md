@@ -1,5 +1,7 @@
-# mocha-eslint
-Run [ESLint](http://eslint.org/) in [Mocha](http://mochajs.org/) tests.
+# mocha-eslint 
+[![Build Status](https://travis-ci.org/BadgeLabs/mocha-eslint.svg?branch=master)](https://travis-ci.org/BadgeLabs/mocha-eslint) [![Dependency Status](https://david-dm.org/BadgeLabs/mocha-eslint.svg)](https://david-dm.org/BadgeLabs/mocha-eslint) [![npm](https://img.shields.io/npm/v/mocha-eslint.svg)]()
+
+Run [ESLint](http://eslint.org/) in your [Mocha](http://mochajs.org/) tests.
 
 Inspired by [mocha-jshint](https://github.com/Muscula/mocha-jshint) from
 [Allan Ebdrup](https://github.com/Muscula).
