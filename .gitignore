@@ -10,3 +10,6 @@ node_modules
 .DS_Store?
 ehthumbs.db
 Thumbs.db
+
+# Text Editors
+*.sublime*
