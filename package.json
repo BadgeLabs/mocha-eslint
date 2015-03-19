@@ -4,7 +4,7 @@
   "description": "run ESLint as mocha tests",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/runner"
   },
   "keywords": [
     "mocha",
@@ -16,6 +16,10 @@
   "dependencies": {
     "chalk": "^1.0",
     "eslint": "^0.17.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.0",
+    "glob": "4.0.5"
   },
   "repository": {
     "type": "git",
