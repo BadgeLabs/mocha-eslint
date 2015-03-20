@@ -1,6 +1,7 @@
 # mocha-eslint Changelog
 
 ### MASTER
+* [BUGFIX] Display ESLint warnings even if tests pass
 
 ### v.0.1.1
 * [ENHANCEMENT] Added acceptance tests
