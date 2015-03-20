@@ -1,6 +1,7 @@
 {
   "parser": "espree",
   "rules" : {
+    "camelcase": 1,
     "quotes"  : [2, "single"]
   },
   "env": {

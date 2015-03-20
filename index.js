@@ -24,7 +24,13 @@ module.exports = function (paths, options) {
             chalk.red('Code did not pass lint rules') +
             formatter(report.results)
           );
+        } else if (
+          report &&
+          report.warningCount > 0
+        ) {
+          console.log(formatter(report.results));
         }
+
       });
     });
   });

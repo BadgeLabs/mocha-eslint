@@ -34,4 +34,16 @@ describe('Acceptance: mocha-eslint', function() {
       done()
     });
   });
+
+  it('should display warnings if no errors are present, but still pass', function (done) {
+    runTest('tests/lint/warningLintTest.js', function (results) {
+      if (results[2].indexOf('warning') === -1) {
+        throw new Error('Did not give a warning');
+      }
+      if (results[4].indexOf('1 passing') === -1) {
+        throw new Error('Did not pass test');
+      }
+      done();
+    });
+  });
 });
