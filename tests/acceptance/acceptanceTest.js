@@ -46,4 +46,14 @@ describe('Acceptance: mocha-eslint', function() {
       done();
     });
   });
+
+  it('should accept glob patterns', function (done) {
+    runTest('tests/lint/globLintTest.js', function (results) {
+      if (results[3].indexOf('1 passing') === -1 ||
+        results[4].indexOf('1 failing') === -1) {
+        throw new Error('Did not get a single pass and single failure');
+      }
+      done();
+    });
+  });
 });
