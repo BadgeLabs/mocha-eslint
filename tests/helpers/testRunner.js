@@ -1,7 +1,6 @@
 /*eslint no-process-exit:0*/
 'use strict';
 
-var glob  = require('glob');
 var Mocha = require('mocha');
 
 function runTest(file, callback) {

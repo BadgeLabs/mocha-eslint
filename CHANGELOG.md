@@ -1,6 +1,7 @@
 # mocha-eslint Changelog
 
 ### MASTER
+* [ENHANCEMENT] Add ability to pass glob patterns as arguments
 * [BUGFIX] Display ESLint warnings even if tests pass
 
 ### v.0.1.1
