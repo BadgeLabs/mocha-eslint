@@ -1,4 +1,4 @@
-# mocha-eslint 
+# mocha-eslint
 [![Travis Build Status][travis-image]][travis-url]
 [![Dependency Status][dependency-image]][dependency-rul]
 [![NPM version][npm-image]][npm-url]
@@ -31,6 +31,7 @@ This will return a function with the signature:
 lint(paths, options)
 ```
 where `paths` is an array of paths from your project's top level directory
+(as of v0.1.2, you can also include [glob patterns](https://github.com/isaacs/node-glob#glob-primer))
 and `options` has a single property `"formatter"` which can be assigned to the
 name of any of the
 [ESLint formatters](https://github.com/eslint/eslint/tree/master/lib/formatters)
@@ -44,18 +45,19 @@ So, a full test file to run in Mocha might look like:
 var lint = require('mocha-eslint');
 
 // Array of paths to lint
-// Note: a seperate Mocha test will be run for each path
+// Note: a seperate Mocha test will be run for each path and each file which
+// matches a glob pattern
 var paths = [
   'bin',
   'lib',
-  'tests',
+  'tests/**/*Test.js',
 ];
 
 // Specify style of output
 var options = {};
 options.formatter = 'compact';
 
-// Get the party started
+// Run the tests
 lint(paths, options);
 ```
 
