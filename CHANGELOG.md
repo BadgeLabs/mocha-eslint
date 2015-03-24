@@ -2,6 +2,9 @@
 
 ### MASTER
 
+### v0.1.3
+* [BUGFIX] Fix glob dependency
+
 ### v0.1.2
 * [ENHANCEMENT] Add ability to pass glob patterns as arguments
 * [BUGFIX] Display ESLint warnings even if tests pass
