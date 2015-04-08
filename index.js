@@ -2,17 +2,24 @@ var CLIEngine = require('eslint').CLIEngine;
 var chalk = require('chalk');
 var glob = require('glob');
 var cli = new CLIEngine({});
-var format;
 
 
-function test(p) {
+function test(p, opts) {
   it('should have no errors in ' + p, function () {
-    try {
-      var report = cli.executeOnFiles([p]);
-      var formatter = cli.getFormatter(format);
-    } catch (err) {
-      throw new Error(err);
+    var format, warn;
+    if (opts && opts.formatter) {
+      format = opts.formatter;
     }
+
+    if (opts && opts.hasOwnProperty('alwaysWarn')) {
+      warn = opts.alwaysWarn;
+    } else {  // Show warnings by default
+      warn = true;
+    }
+
+    var report = cli.executeOnFiles([p]);
+    var formatter = cli.getFormatter(format);
+
     if (
       report &&
       report.errorCount > 0
@@ -22,6 +29,7 @@ function test(p) {
         formatter(report.results)
       );
     } else if (
+      warn &&
       report &&
       report.warningCount > 0
     ) {
@@ -32,17 +40,14 @@ function test(p) {
 }
 
 module.exports = function (patterns, options) {
-  if (options && options.formatter) {
-    format = options.formatter;
-  }
   describe('eslint', function () {
     patterns.forEach(function (pattern) {
       if (glob.hasMagic(pattern)) {
         glob.sync(pattern).forEach(function (file) {
-          test(file);
+          test(file, options);
         });
       } else {
-        test(pattern);
+        test(pattern, options);
       }
     });
   });

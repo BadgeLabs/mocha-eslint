@@ -57,6 +57,9 @@ var paths = [
 var options = {};
 options.formatter = 'compact';
 
+// Only display warnings if a test is failing
+options.alwaysWarn = false; // Defaults to true, always show warnings
+
 // Run the tests
 lint(paths, options);
 ```

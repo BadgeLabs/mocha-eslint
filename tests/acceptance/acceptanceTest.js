@@ -36,7 +36,31 @@ describe('Acceptance: mocha-eslint', function() {
   });
 
   it('should display warnings if no errors are present, but still pass', function (done) {
-    runTest('tests/lint/warningLintTest.js', function (results) {
+    runTest('tests/lint/warningTrueLintTest.js', function (results) {
+      if (results[2].indexOf('warning') === -1) {
+        throw new Error('Did not give a warning');
+      }
+      if (results[4].indexOf('1 passing') === -1) {
+        throw new Error('Did not pass test');
+      }
+      done();
+    });
+  });
+
+  it('should not display warnings if alwaysWarn is false', function (done) {
+    runTest('tests/lint/warningFalseLintTest.js', function (results) {
+      if (results[2].indexOf('warning') !== -1) {
+        throw new Error('Gave a warning');
+      }
+      if (results[3].indexOf('1 passing') === -1) {
+        throw new Error('Did not pass test');
+      }
+      done();
+    });
+  });
+
+  it('should display warnings if alwaysWarn is not specified', function (done) {
+    runTest('tests/lint/warningDefaultLintTest.js', function (results) {
       if (results[2].indexOf('warning') === -1) {
         throw new Error('Did not give a warning');
       }
