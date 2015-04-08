@@ -4,7 +4,7 @@
 [![NPM version][npm-image]][npm-url]
 
 
-Run [ESLint](http://eslint.org/) in your [Mocha](http://mochajs.org/) tests.
+A simple way to run [ESLint](http://eslint.org/) in your [Mocha](http://mochajs.org/) tests without a task runner like Grunt or Gulp.
 
 Inspired by [mocha-jshint](https://github.com/Muscula/mocha-jshint) from
 [Allan Ebdrup](https://github.com/Muscula).
