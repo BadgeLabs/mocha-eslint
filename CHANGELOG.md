@@ -2,6 +2,12 @@
 
 ### MASTER
 
+### v0.1.5
+* [ENHANCEMENT] Increment ESLint to v0.19.0
+
+### v0.1.4
+* [ENHANCEMENT] Increment ESLint to v0.18.0
+
 ### v0.1.3
 * [BUGFIX] Fix glob dependency
 
