@@ -1,5 +1,4 @@
-node_modules
-test
+tests
 .gitignore
 test.js
 *.sublime*
