@@ -2,6 +2,9 @@
 
 ### MASTER
 
+### v0.1.7
+* [ENHANCEMENT] Increment ESLint to v0.21.0
+
 ### v0.1.6
 * [ENHANCEMENT] Increment ESLint to v0.20.0
 
