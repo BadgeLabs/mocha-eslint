@@ -2,6 +2,10 @@
 
 ### MASTER
 
+### v0.2.0
+* [ENHANCEMENT] Add alwaysWarn option, defaults to true
+* [ENHANCEMENT] Increment ESLint to v0.24.0
+
 ### v0.1.7
 * [ENHANCEMENT] Increment ESLint to v0.21.0
 
