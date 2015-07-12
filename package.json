@@ -14,12 +14,13 @@
   "author": "Ian VanSchooten",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^1.0",
+    "chalk": "^1.1.0",
     "eslint": "^1.0.0",
-    "glob": "^5.0.14"
+    "glob": "^5.0.14",
+    "glob-all": "^3.0.1"
   },
   "devDependencies": {
-    "mocha": "^2.0"
+    "mocha": "^2.2.5"
   },
   "repository": {
     "type": "git",
