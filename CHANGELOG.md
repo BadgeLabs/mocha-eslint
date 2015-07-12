@@ -2,6 +2,12 @@
 
 ### MASTER
 
+### v0.3.0
+* [ENHANCEMENT] Add multiple globs support with glob-all
+* [ENHANCEMENT] Increment ESLint to v0.24.1
+* [ENHANCEMENT] Increment chalk to v1.1.0
+* [ENHANCEMENT] Increment mocha to v2.2.5
+
 ### v0.2.0
 * [ENHANCEMENT] Add alwaysWarn option, defaults to true
 * [ENHANCEMENT] Increment ESLint to v0.24.0
