@@ -1,6 +1,8 @@
 # mocha-eslint Changelog
 
 ### MASTER
+
+### 1.0.0
 - [BREAKING] Update to ESLint 1.0.0
 
 ### v0.2.0
