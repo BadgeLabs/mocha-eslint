@@ -43,7 +43,7 @@ name of any of the
 
 So, a full test file to run in Mocha might look like:
 
-```
+```javascript
 var lint = require('mocha-eslint');
 
 // Array of paths to lint
