@@ -25,11 +25,11 @@ The same is not true for Mocha.  You should already have Mocha installed in your
 
 After mocha-eslint is installed, you can use it by creating a test file for
 Mocha and requiring mocha-eslint like so:
-```
+```javascript
 var lint = require('mocha-eslint');
 ```
 This will return a function with the signature:
-```
+```javascript
 lint(paths, options)
 ```
 where `paths` is an array of paths from your project's top level directory
