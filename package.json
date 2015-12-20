@@ -19,7 +19,7 @@
   },
   "peerDependencies": {
     "eslint": "^1.0.0"
-  }
+  },
   "devDependencies": {
     "mocha": "^2.0"
   },
