@@ -7,6 +7,11 @@ var cli = new CLIEngine({});
 function test(p, opts) {
   it('should have no errors in ' + p, function () {
     var format, warn;
+
+    if (opts && opts.timeout) {
+      this.timeout(opts.timeout);
+    }
+
     if (opts && opts.formatter) {
       format = opts.formatter;
     }
