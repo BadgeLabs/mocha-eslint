@@ -15,8 +15,10 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^1.0",
-    "eslint": "^1.0.0",
     "glob": "^5.0.14"
+  },
+  "peerDependencies": {
+    "eslint": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "^2.0"
