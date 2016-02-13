@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^1.1.0",
-    "eslint": "^1.0.0",
+    "eslint": "^2.0.0",
     "glob-all": "^3.0.1"
   },
   "devDependencies": {
