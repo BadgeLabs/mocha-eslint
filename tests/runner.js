@@ -1,7 +1,7 @@
 /*eslint no-process-exit:0*/
 'use strict';
 
-var glob  = require('glob');
+var glob  = require('glob-all');
 var Mocha = require('mocha');
 var chalk = require('chalk');
 

@@ -1,9 +1,10 @@
 # mocha-eslint Changelog
 
 ### MASTER
+* [ENHANCEMENT] Add multiple globs and negation support
 
 ### 1.0.0
-- [BREAKING] Update to ESLint 1.0.0
+* [BREAKING] Update to ESLint 1.0.0
 
 ### v0.2.0
 * [ENHANCEMENT] Add alwaysWarn option, defaults to true

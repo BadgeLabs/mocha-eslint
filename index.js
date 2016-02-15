@@ -1,6 +1,6 @@
 var CLIEngine = require('eslint').CLIEngine;
 var chalk = require('chalk');
-var glob = require('glob');
+var globAll = require('glob-all');
 var cli = new CLIEngine({});
 
 
@@ -46,14 +46,8 @@ function test(p, opts) {
 
 module.exports = function (patterns, options) {
   describe('eslint', function () {
-    patterns.forEach(function (pattern) {
-      if (glob.hasMagic(pattern)) {
-        glob.sync(pattern).forEach(function (file) {
-          test(file, options);
-        });
-      } else {
-        test(pattern, options);
-      }
+    globAll.sync(patterns).forEach(function (file) {
+      test(file, options);
     });
   });
 };
