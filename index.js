@@ -47,18 +47,8 @@ function test(p, opts) {
 
 module.exports = function (patterns, options) {
   describe('eslint', function () {
-    if (patterns.constructor === Array) {
-      globAll.sync(patterns).forEach(function (file) {
-        test(file, options);
-      });
-    } else {
-      if (glob.hasMagic(patterns)) {
-        glob.sync(patterns).forEach(function (file) {
-          test(file, options);
-        });
-      } else {
-        test(patterns, options);
-      }
-    }
+    globAll.sync(patterns).forEach(function (file) {
+      test(file, options);
+    });
   });
 };

@@ -53,6 +53,7 @@ var paths = [
   'bin',
   'lib',
   'tests/**/*Test.js',
+  '!tests/NotATest.js', // negation also works
 ];
 
 // Specify style of output
