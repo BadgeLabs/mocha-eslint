@@ -1,6 +1,5 @@
 var CLIEngine = require('eslint').CLIEngine;
 var chalk = require('chalk');
-var glob = require('glob');
 var globAll = require('glob-all');
 var cli = new CLIEngine({});
 
