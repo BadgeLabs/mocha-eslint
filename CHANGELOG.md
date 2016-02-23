@@ -1,6 +1,8 @@
 # mocha-eslint Changelog
 
 ### MASTER
+
+### 2.0.0
 * [ENHANCEMENT] Add multiple globs and negation support
 * [ENHANCEMENT] Add mocha timeout option
 * [BREAKING] Update to ESLint 2.0.0
