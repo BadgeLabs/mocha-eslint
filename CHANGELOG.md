@@ -2,6 +2,8 @@
 
 ### MASTER
 * [ENHANCEMENT] Add multiple globs and negation support
+* [ENHANCEMENT] Add mocha timeout option
+* [BREAKING] Update to ESLint 2.0.0
 
 ### 1.0.0
 * [BREAKING] Update to ESLint 1.0.0
