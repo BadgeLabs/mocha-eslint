@@ -2,8 +2,9 @@
 'use strict';
 
 var Mocha = require('mocha');
+var Promise = require('es6-promise').Promise;
 
-function runTest(file, callback) {
+function runTest(file) {
 
   var mocha = new Mocha({
     // For some reason, tests take a long time on Windows (or at least AppVeyor)
@@ -20,10 +21,12 @@ function runTest(file, callback) {
     output.push(str.toString('utf8'));
   };
 
-  mocha.run(function (failures) {
-    process.stdout.write = originalWrite;
-    callback(output);
-  });
+  return new Promise(function(resolve) {
+    mocha.run(function (failures) {
+      process.stdout.write = originalWrite;
+      resolve(output);
+    });
+  })
 }
 
 exports.runTest = runTest;
