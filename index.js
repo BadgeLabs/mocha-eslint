@@ -31,7 +31,8 @@ function test(p, opts) {
     ) {
       throw new Error(
         chalk.red('Code did not pass lint rules') +
-        formatter(report.results)
+        // remove process.cwd() to convert absolute to relative paths
+        formatter(report.results).replace(process.cwd() + '/', '')
       );
     } else if (
       warn &&
