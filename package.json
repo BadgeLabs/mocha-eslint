@@ -19,6 +19,7 @@
     "glob-all": "^3.0.1"
   },
   "devDependencies": {
+    "es6-promise": "^3.1.2",
     "mocha": "^2.2.5"
   },
   "repository": {
