@@ -21,6 +21,15 @@ describe('Acceptance: mocha-eslint', function () {
       if (results[4].indexOf('1 failing') === -1) {
         throw new Error('Did not get a failing test');
       }
+
+      var reasonsCount = results[6].split('\n')
+          .filter(function(line) { return line.indexOf('Code did not pass lint rules') !== -1; })
+          .length;
+
+      if (reasonsCount !== 1) {
+        throw new Error('Counted ' + reasonsCount + " failure reasons");
+      }
+
       done();
     });
   });
