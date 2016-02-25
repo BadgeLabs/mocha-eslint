@@ -2,6 +2,9 @@
 
 ### MASTER
 
+### 2.0.1
+* [BUGFIX] Prevent duplicate error messages
+
 ### 2.0.0
 * [ENHANCEMENT] Add multiple globs and negation support
 * [ENHANCEMENT] Add mocha timeout option
