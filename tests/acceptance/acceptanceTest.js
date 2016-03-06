@@ -29,6 +29,22 @@ describe('Acceptance: mocha-eslint', function () {
     });
   });
 
+  it('should fail test for multiple-failing fixture', function () {
+    return runTest('tests/lint/multipleFailingLintTest.js').then(function (results) {
+      if (results[4].indexOf('1 failing') === -1) {
+        throw new Error('Did not get a failing test');
+      }
+
+      var reasonsCount = results[6].split('\n')
+          .filter(function(line) { return line.indexOf('Code did not pass lint rules') !== -1; })
+          .length;
+
+      if (reasonsCount !== 1) {
+        throw new Error('Counted ' + reasonsCount + " failure reasons");
+      }
+    });
+  });
+
   it('should test multiple paths correctly', function () {
     return runTest('tests/lint/multiplePathTest.js').then(function (results) {
       if (results[3].indexOf('1 passing') === -1 ||
