@@ -1,6 +1,7 @@
 var CLIEngine = require('eslint').CLIEngine;
 var chalk = require('chalk');
 var globAll = require('glob-all');
+var replaceAll = require("replaceall");
 var cli = new CLIEngine({});
 
 
@@ -32,7 +33,7 @@ function test(p, opts) {
       throw new Error(
         chalk.red('Code did not pass lint rules') +
         // remove process.cwd() to convert absolute to relative paths
-        formatter(report.results).replace(process.cwd() + '/', '')
+        replaceAll(process.cwd() + '/', '', formatter(report.results))
       );
     } else if (
       warn &&
