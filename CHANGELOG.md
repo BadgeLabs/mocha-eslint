@@ -2,6 +2,9 @@
 
 ### MASTER
 
+### 2.0.2
+* [BUGFIX] Prevent duplicate error messages when more than one file with errors
+
 ### 2.0.1
 * [BUGFIX] Prevent duplicate error messages
 
