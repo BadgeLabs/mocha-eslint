@@ -27,7 +27,7 @@ function test(p, opts) {
     var formatter = cli.getFormatter(format);
 
     if (report) {
-      if (report.errorCount > 0 || opts.strict && report.warningCount > 0) {
+      if (report.errorCount > 0 || (opts.strict && report.warningCount > 0)) {
         throw new Error(
           chalk.red('Code did not pass lint rules') +
           // remove process.cwd() to convert absolute to relative paths
