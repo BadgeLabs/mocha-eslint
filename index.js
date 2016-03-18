@@ -26,21 +26,19 @@ function test(p, opts) {
     var report = cli.executeOnFiles([p]);
     var formatter = cli.getFormatter(format);
 
-    if (
-      report &&
-      report.errorCount > 0
-    ) {
-      throw new Error(
-        chalk.red('Code did not pass lint rules') +
-        // remove process.cwd() to convert absolute to relative paths
-        replaceAll(process.cwd() + '/', '', formatter(report.results))
-      );
-    } else if (
-      warn &&
-      report &&
-      report.warningCount > 0
-    ) {
-      console.log(formatter(report.results));
+    if (report) {
+      if (report.errorCount > 0 || (opts.strict && report.warningCount > 0)) {
+        throw new Error(
+          chalk.red('Code did not pass lint rules') +
+          // remove process.cwd() to convert absolute to relative paths
+          replaceAll(process.cwd() + '/', '', formatter(report.results))
+        );
+      } else if (
+        warn &&
+        report.warningCount > 0
+      ) {
+        console.log(formatter(report.results));
+      }
     }
 
   });
