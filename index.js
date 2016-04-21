@@ -13,6 +13,10 @@ function test(p, opts) {
       this.timeout(opts.timeout);
     }
 
+    if (opts && opts.slow) {
+      this.slow(opts.slow);
+    }
+
     if (opts && opts.formatter) {
       format = opts.formatter;
     }
