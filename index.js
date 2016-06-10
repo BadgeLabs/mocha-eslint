@@ -6,22 +6,23 @@ var cli = new CLIEngine({});
 
 
 function test(p, opts) {
+  opts = opts || {};
   it('should have no errors in ' + p, function () {
     var format, warn;
 
-    if (opts && opts.timeout) {
+    if (opts.timeout) {
       this.timeout(opts.timeout);
     }
 
-    if (opts && opts.slow) {
+    if (opts.slow) {
       this.slow(opts.slow);
     }
 
-    if (opts && opts.formatter) {
+    if (opts.formatter) {
       format = opts.formatter;
     }
 
-    if (opts && opts.hasOwnProperty('alwaysWarn')) {
+    if (opts.hasOwnProperty('alwaysWarn')) {
       warn = opts.alwaysWarn;
     } else {  // Show warnings by default
       warn = true;
