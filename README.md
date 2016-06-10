@@ -21,12 +21,6 @@ adding it to your consuming module.
 The same is not true for Mocha. You should already have Mocha installed in your
 consuming module.
 
-*Note: verison 1.0.0 of this project uses eslint 1.0.0. Read the
-[migration guide](http://eslint.org/docs/user-guide/migrating-to-1.0.0) to learn
-what you need to do for the upgrade, but the main thing is that ESLint will no
-longer provide rules by default, you'll need to set them explicitly or extend
-from a shared config.*
-
 ## Usage
 
 After mocha-eslint is installed, you can use it by creating a test file for
@@ -85,8 +79,7 @@ lint(paths, options);
 ## Notes
 
 This module does not make any decisions about which ESLint rules to run. Make
-sure your project has a `.eslintrc` file if you want ESLint to do anything. As
-of version 1.0.0, no rules are enabled by default.
+sure your project has a `.eslintrc` file if you want ESLint to do anything.
 
 [npm-image]: https://img.shields.io/npm/v/mocha-eslint.svg
 [npm-url]: https://www.npmjs.com/package/mocha-eslint
