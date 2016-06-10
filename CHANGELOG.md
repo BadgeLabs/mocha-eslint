@@ -2,6 +2,13 @@
 
 ### MASTER
 
+### 2.1.1
+* [BUGFIX] Prevent error when no options are given
+
+### 2.1.0
+* [ENHANCEMENT] Support Mocha `slow` override option
+* [ENHANCEMENT] Add `strict` option to treat warnings as failures
+
 ### 2.0.2
 * [BUGFIX] Prevent duplicate error messages when more than one file with errors
 
