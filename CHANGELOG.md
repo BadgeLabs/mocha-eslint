@@ -2,6 +2,9 @@
 
 ### MASTER
 
+### 3.0.0
+* [BREAKING] Update to ESLint 3.0.0
+
 ### 2.1.1
 * [BUGFIX] Prevent error when no options are given
 
