@@ -2,11 +2,8 @@ var CLIEngine = require('eslint').CLIEngine;
 var chalk = require('chalk');
 var globAll = require('glob-all');
 var replaceAll = require("replaceall");
-var cli = new CLIEngine({});
 
-
-function test(p, opts) {
-  opts = opts || {};
+function test(p, opts, cli) {
   it('should have no errors in ' + p, function () {
     var format, warn;
 
@@ -50,9 +47,12 @@ function test(p, opts) {
 }
 
 module.exports = function (patterns, options) {
+  var opts = options || {};
+  var cli = new CLIEngine(options.cliOptions || {});
+
   describe('eslint', function () {
     globAll.sync(patterns).forEach(function (file) {
-      test(file, options);
+      test(file, opts, cli);
     });
   });
 };
