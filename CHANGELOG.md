@@ -2,6 +2,9 @@
 
 ### MASTER
 
+### 4.0.0
+* [BREAKING] Update to ESLint `^4.2.0`
+
 ### 3.0.1
 * [BUGFIX] Remove tests from npm package
 
