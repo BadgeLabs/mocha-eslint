@@ -4,12 +4,12 @@
 var Mocha = require('mocha');
 var Promise = require('es6-promise').Promise;
 
-function runTest(file) {
-
+function runTest(file, options) {
+  options = options || {};
   var mocha = new Mocha({
     // For some reason, tests take a long time on Windows (or at least AppVeyor)
     timeout: (process.platform === 'win32') ? 10000 : 2000,
-    reporter: 'min'
+    reporter: options.reporter || 'min',
   });
 
   mocha.addFile(file);

@@ -5,7 +5,6 @@ var globAll = require('glob-all');
 var replaceAll = require("replaceall");
 var cli = new CLIEngine({});
 
-
 function test(p, opts) {
   opts = opts || {};
   it('should have no errors in ' + p, function () {
@@ -51,7 +50,8 @@ function test(p, opts) {
 }
 
 module.exports = function (patterns, options) {
-  describe('eslint', function () {
+  var contextName = (options && options.contextName) || 'eslint';
+  describe(contextName, function () {
     globAll.sync(patterns).forEach(function (file) {
       test(file, options);
     });
