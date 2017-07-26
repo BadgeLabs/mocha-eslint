@@ -24,7 +24,7 @@ describe('Acceptance: mocha-eslint', function () {
           .length;
 
       if (reasonsCount !== 1) {
-        throw new Error('Counted ' + reasonsCount + " failure reasons");
+        throw new Error('Counted ' + reasonsCount + ' failure reasons');
       }
     });
   });
@@ -40,7 +40,7 @@ describe('Acceptance: mocha-eslint', function () {
           .length;
 
       if (reasonsCount !== 1) {
-        throw new Error('Counted ' + reasonsCount + " failure reasons");
+        throw new Error('Counted ' + reasonsCount + ' failure reasons');
       }
     });
   });
@@ -110,6 +110,30 @@ describe('Acceptance: mocha-eslint', function () {
       if (results[3].indexOf('1 passing') === -1 ||
         results[4].indexOf('1 failing') !== -1) {
         throw new Error('Did not get a single pass');
+      }
+    });
+  });
+
+  it('should mocha context should default to `eslint` when not defined', function () {
+      return runTest('tests/lint/contextNoOverrideTest.js', { reporter: 'spec' }).then(function (results) {
+        if (results[2].indexOf('eslint') === -1) {
+          throw new Error('Did not default the context name');
+        }
+      });
+  });
+
+  it('should overwrite mocha context name when options is passed in', function () {
+    return runTest('tests/lint/contextOverrideTest.js', { reporter: 'spec' }).then(function (results) {
+      if (results[2].indexOf('overridden context') === -1) {
+        throw new Error('Did not override the context name');
+      }
+    });
+  });
+
+  it('should run successfully without passign options', function () {
+    return runTest('tests/lint/contextNoOptionsTest.js').then(function (results) {
+      if (results[3].indexOf('1 passing') === -1) {
+        throw new Error('Did not get a passing test');
       }
     });
   });
