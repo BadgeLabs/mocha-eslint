@@ -1,6 +1,6 @@
 {
   "name": "mocha-eslint",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "run ESLint as mocha tests",
   "main": "index.js",
   "scripts": {

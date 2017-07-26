@@ -2,6 +2,9 @@
 
 ### MASTER
 
+### 4.1.0
+* [ENHANCEMENT] Add `contextName` option to control Mocha report output
+
 ### 4.0.0
 * [BREAKING] Update to ESLint `^4.2.0`
 
