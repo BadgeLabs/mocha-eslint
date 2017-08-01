@@ -71,6 +71,9 @@ var options = {
   // Consider linting warnings as errors and return failure
   strict: true,  // Defaults to `false`, only notify the warnings
 
+  // Change errors that ESLint can handle without user intervention
+  fix: true,  // Defaults to `false`, will not change your files
+
   // Specify the mocha context in which to run tests
   contextName: 'eslint',  // Defaults to `eslint`, but can be any string
 };

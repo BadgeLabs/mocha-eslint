@@ -3,10 +3,11 @@ var CLIEngine = require('eslint').CLIEngine;
 var chalk = require('chalk');
 var globAll = require('glob-all');
 var replaceAll = require("replaceall");
-var cli = new CLIEngine({});
 
 function test(p, opts) {
   opts = opts || {};
+  var cli = new CLIEngine({fix: opts.fix});
+
   it('should have no errors in ' + p, function () {
     var format, warn;
 
@@ -29,6 +30,9 @@ function test(p, opts) {
     }
 
     var report = cli.executeOnFiles([p]);
+    if (opts.fix) {
+        CLIEngine.outputFixes(report);
+    }
     var formatter = cli.getFormatter(format);
 
     if (report) {
