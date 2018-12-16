@@ -2,6 +2,10 @@
 
 ### MASTER
 
+### 5.0.0
+* [BREAKING] Update to ESLint verison 5
+* [BREAKING] Drop support for Node < 6
+
 ### 4.1.0
 * [ENHANCEMENT] Add `contextName` option to control Mocha report output
 
