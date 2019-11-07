@@ -5,9 +5,11 @@ var globAll = require('glob-all');
 var replaceAll = require("replaceall");
 var cli = new CLIEngine({});
 
+var mochaInterface;
+
 function test(p, opts) {
   opts = opts || {};
-  it('should have no errors in ' + p, function () {
+  mochaInterface.it('should have no errors in ' + p, function () {
     var format, warn;
 
     if (opts.timeout) {
@@ -50,10 +52,21 @@ function test(p, opts) {
 }
 
 module.exports = function (patterns, options) {
+  mochaInterface = getMochaInterface();
   var contextName = (options && options.contextName) || 'eslint';
-  describe(contextName, function () {
+  mochaInterface.describe(contextName, function () {
     globAll.sync(patterns).forEach(function (file) {
       test(file, options);
     });
   });
 };
+
+function getMochaInterface () {
+  if (global.describe) {
+    return { describe: global.describe, it: global.it };
+  }
+  if (global.suite) {
+    return { describe: global.suite, it: global.test };
+  }
+  throw new Error('no mocha interface was found on the global scope');
+}
