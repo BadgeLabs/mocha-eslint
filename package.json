@@ -13,14 +13,17 @@
   ],
   "author": "Ian VanSchooten",
   "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">=3"
+  },
   "dependencies": {
     "chalk": "^2.4.2",
-    "eslint": "^6.6.0",
     "glob-all": "^3.1.0",
     "replaceall": "^0.1.6"
   },
   "devDependencies": {
     "es6-promise": "^4.2.8",
+    "eslint": "^6.6.0",
     "mocha": "^6.2.2"
   },
   "repository": {
