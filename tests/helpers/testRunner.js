@@ -1,12 +1,11 @@
 /*eslint no-process-exit:0*/
 'use strict';
 
-var Mocha = require('mocha');
-var Promise = require('es6-promise').Promise;
+const Mocha = require('mocha');
 
 function runTest(file, options) {
   options = options || {};
-  var mocha = new Mocha({
+  const mocha = new Mocha({
     // For some reason, tests take a long time on Windows (or at least AppVeyor)
     timeout: (process.platform === 'win32') ? 10000 : 2000,
     reporter: options.reporter || 'min',
@@ -14,7 +13,7 @@ function runTest(file, options) {
 
   mocha.addFile(file);
 
-  var output, originalWrite;
+  let output, originalWrite;
   output = [];
   originalWrite = process.stdout.write;
   process.stdout.write = function(str) {
@@ -23,9 +22,10 @@ function runTest(file, options) {
 
   return new Promise(function(resolve) {
     mocha.run(function (failures) {
-      process.stdout.write = originalWrite;
       resolve(output);
     });
+  }).finally(function () {
+    process.stdout.write = originalWrite;
   })
 }
 
