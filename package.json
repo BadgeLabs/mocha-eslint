@@ -3,6 +3,9 @@
   "version": "6.0.0",
   "description": "run ESLint as mocha tests",
   "main": "index.js",
+  "engines": {
+    "node": "^10.12.0 || >=12.0.0"
+  },
   "scripts": {
     "test": "node tests/runner"
   },
@@ -15,13 +18,12 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
-    "eslint": "^6.6.0",
-    "glob-all": "^3.1.0",
+    "eslint": "^7.0.0",
+    "glob-all": "^3.2.1",
     "replaceall": "^0.1.6"
   },
   "devDependencies": {
-    "es6-promise": "^4.2.8",
-    "mocha": "^6.2.2"
+    "mocha": "^8.2.1"
   },
   "repository": {
     "type": "git",
