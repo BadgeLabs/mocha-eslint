@@ -1,6 +1,12 @@
 # mocha-eslint Changelog
 
-### MASTER
+### 7.0.0
+* [BREAKING] Update to ESLint version 7
+* [BREAKING] Drop support for Node < 10.12.0
+
+### 6.0.0
+* [BREAKING] Update to ESLint version 6
+* [ENHANCEMENT] Support Mocha 6
 
 ### 5.0.0
 * [BREAKING] Update to ESLint verison 5
